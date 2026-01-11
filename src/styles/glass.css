@@ -1,0 +1,99 @@
+/* Glassmorphism Utilities */
+
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.glass-input {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--glass-border);
+    color: var(--text-color);
+    backdrop-filter: blur(4px);
+    padding: 12px 16px;
+    border-radius: 12px;
+    outline: none;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.glass-input:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 15px rgba(var(--accent-hue), 100%, 50%, 0.2);
+}
+
+.glass-button {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    color: var(--text-color);
+    padding: 10px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: 0.5s;
+}
+
+.glass-button:hover::before {
+    left: 100%;
+}
+
+.glass-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--accent-color);
+    text-shadow: 0 0 8px var(--accent-color);
+    box-shadow: 0 0 20px rgba(var(--accent-hue), 100%, 50%, 0.3);
+}
+
+.glass-text-gradient {
+    background: linear-gradient(135deg, #ffffff 0%, var(--accent-color) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Range Slider */
+.glass-slider {
+    -webkit-appearance: none;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    height: 4px;
+    outline: none;
+    margin: 10px 0;
+}
+
+.glass-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    box-shadow: 0 0 10px var(--accent-color);
+    border: 2px solid #fff;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.glass-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
